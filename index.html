@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stewardship & Governance Playbook: UC Board of Regents</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Premium Minimalist Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pitchblack: '#0A0A0A',
+                        obsidian: '#121212',
+                        carbon: '#1C1C1C',
+                        softbone: '#F4F4F1',
+                        minimalgold: '#C5A059',
+                        mutedgray: '#7A7A7A',
+                        accentsand: '#E6DFD3'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+        
+        /* Premium custom scrollbar */
+        .custom-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: #121212;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #C5A059;
+            border-radius: 2px;
+        }
+        
+        .active-tab {
+            color: #C5A059 !important;
+            border-left: 2px solid #C5A059;
+            background-color: rgba(197, 160, 89, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-pitchblack text-softbone font-sans min-h-screen flex flex-col antialiased">
+
+    <!-- Top Navigation Bar -->
+    <header class="bg-obsidian border-b border-white/10 px-6 py-4 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div class="flex items-center space-x-4">
+                <span class="font-serif tracking-widest text-2xl font-bold text-minimalgold">UCR</span>
+                <div class="h-6 w-[1px] bg-white/20"></div>
+                <div>
+                    <h1 class="text-xs uppercase tracking-[0.2em] font-extrabold text-white">The Stewardship & Governance Index</h1>
+                    <p class="text-[9px] text-mutedgray uppercase tracking-widest font-semibold">University of California Board of Regents Assessment</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-3 text-xs uppercase tracking-[0.15em] font-bold">
+                <span class="text-minimalgold">MBA Strategy Series</span>
+                <span class="text-white/20">/</span>
+                <span class="text-mutedgray">EDUC 248G Deliverable</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Layout -->
+    <div class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col lg:flex-row gap-8">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="w-full lg:w-1/4 flex flex-col gap-4">
+            <div class="bg-obsidian rounded-lg p-6 border border-white/10">
+                <h2 class="text-[10px] font-bold text-mutedgray uppercase tracking-widest mb-4">Playbook Modules</h2>
+                <nav class="flex flex-col gap-1">
+                    <button onclick="switchModule('exec-summary')" id="mod-exec-summary" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-mutedgray hover:text-white">
+                        <i class="fa-solid fa-file-contract text-sm w-5"></i>
+                        <span>Executive Summary</span>
+                    </button>
+                    <button onclick="switchModule('definitions')" id="mod-definitions" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-mutedgray hover:text-white">
+                        <i class="fa-solid fa-spell-check text-sm w-5"></i>
+                        <span>Key Glossary</span>
+                    </button>
+                    <button onclick="switchModule('stakeholders')" id="mod-stakeholders" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-mutedgray hover:text-white">
+                        <i class="fa-solid fa-users-viewfinder text-sm w-5"></i>
+                        <span>Stakeholder Matrix</span>
+                    </button>
+                    <button onclick="switchModule('methodology')" id="mod-methodology" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-mutedgray hover:text-white">
+                        <i class="fa-solid fa-sliders text-sm w-5"></i>
+                        <span>Scorecard Mechanics</span>
+                    </button>
+                    <button onclick="switchModule('case-study')" id="mod-case-study" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-mutedgray hover:text-white">
+                        <i class="fa-solid fa-magnifying-glass-chart text-sm w-5"></i>
+                        <span>UC Regents Case</span>
+                    </button>
+                    <button onclick="switchModule('calculator')" id="mod-calculator" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-mutedgray hover:text-white">
+                        <i class="fa-solid fa-square-poll-vertical text-sm w-5"></i>
+                        <span>Live Scorecard</span>
+                    </button>
+                    <button onclick="switchModule('citations')" id="mod-citations" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-mutedgray hover:text-white">
+                        <i class="fa-solid fa-book-bookmark text-sm w-5"></i>
+                        <span>Literature & Citations</span>
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Context Quote Card -->
+            <div class="bg-gradient-to-br from-carbon to-obsidian border border-white/10 rounded-lg p-6 relative overflow-hidden">
+                <div class="absolute -right-6 -bottom-6 text-white/5 text-8xl">
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+                <p class="text-[9px] font-bold text-minimalgold uppercase tracking-widest mb-2">The MBA Strategy Lens</p>
+                <p class="font-serif italic text-sm text-gray-300 leading-relaxed mb-4">
+                    "Traditional corporate governance evaluates performance based on bottom-line financial indicators. In public higher education, the ultimate bottom line is the preservation of the academic mission, democratic access, and institutional autonomy."
+                </p>
+                <div class="border-t border-white/10 pt-3 flex items-center gap-3">
+                    <div class="bg-minimalgold text-pitchblack w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs">SO</div>
+                    <div>
+                        <p class="text-xs font-bold">Sarah Ogden, MBA (c)</p>
+                        <p class="text-[9px] text-mutedgray">UC Riverside School of Business</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Display Arena -->
+        <main class="w-full lg:w-3/4">
+            
+            <!-- MODULE 1: EXECUTIVE SUMMARY -->
+            <div id="tab-exec-summary" class="module-content bg-obsidian border border-white/10 rounded-lg p-8 hidden flex-col justify-between min-h-[500px]">
+                <div class="space-y-6">
+                    <div class="flex justify-between items-start border-b border-white/10 pb-4">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-[0.25em] font-extrabold text-minimalgold">Module 01</span>
+                            <h2 class="text-3xl font-serif italic text-white mt-1">1-Page Executive Summary</h2>
+                        </div>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] uppercase tracking-widest text-mutedgray">Briefing</span>
+                    </div>
+
+                    <div class="prose max-w-none text-mutedgray text-xs sm:text-sm space-y-4 leading-relaxed">
+                        <p class="text-softbone font-semibold text-sm">
+                            TO: Dr. Raquel M. Rall, Faculty & Board Stakeholders <br>
+                            FROM: Sarah Ogden, MBA Candidate <br>
+                            SUBJECT: The Stewardship & Governance Index (SGI) — UC Board of Regents Evaluation
+                        </p>
+                        <hr class="border-white/10">
+                        <p>
+                            In the contemporary landscape of public higher education, governing boards are navigating unprecedented tensions characterized by structural funding deficits, changing student demographics, and rising external political pressures (Pierce, 2014; Rall et al., 2025). Despite holding ultimate legal authority, boards are rarely evaluated using standardized metrics. This briefing introduces the **Stewardship & Governance Index (SGI)**, a performance-evaluation framework that translates academic governance literature into actionable key performance indicators.
+                        </p>
+                        <p>
+                            **Methodological Framework:** Operating from a cybernetic perspective of academic institutions (Birnbaum, 1989), the SGI evaluates the board across five core dimensions: *Institutional Autonomy*, *Boundary Network Integrity*, *Cybernetic Sensitivity*, *Fiduciary DEIJ Fluency*, and *Relational Trust Capital*. Each dimension is measured on a five-star rubric using observable evidence such as public bylaws, state constitutional mandates, and asset disclosures (Form 700).
+                        </p>
+                        <p>
+                            **Core Findings (Example Institution: UC Board of Regents):** Applying the SGI to the University of California Board of Regents reveals a complex profile. The board scores highly in *Boundary Network Integrity* due to the high connectivity of its corporate networks (Barringer et al., 2022) and strong financial literacy. However, a significant **"Representation Gap"** exists: the board comprises 26 voting members, but only one is a student representing over 290,000 constituents. Furthermore, the board exhibits an **"Electrical Socket" dynamic** (Morgan et al., 2022) regarding DEIJ initiatives, showing episodic, crisis-driven intervention rather than continuous, systemic integration.
+                        </p>
+                        <p>
+                            **Strategic Recommendation:** To bridge the gap from hierarchical control to true shared stewardship, the board must transition from traditional shared governance to **Shared Responsibility** (Bahls, 2014). This includes expanding student voting seats, establishing rigorous boundary audits, and building ongoing, proactive feedback loops with the Academic Senate.
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-8 pt-4 border-t border-white/5 flex justify-between text-[9px] text-mutedgray uppercase tracking-widest">
+                    <span>Stewardship & Governance Index</span>
+                    <span>Document Page 1</span>
+                </div>
+            </div>
+
+            <!-- MODULE 2: KEY GLOSSARY -->
+            <div id="tab-definitions" class="module-content bg-obsidian border border-white/10 rounded-lg p-8 hidden flex-col justify-between min-h-[500px]">
+                <div class="space-y-6">
+                    <div class="flex justify-between items-start border-b border-white/10 pb-4">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-[0.25em] font-extrabold text-minimalgold">Module 02</span>
+                            <h2 class="text-3xl font-serif italic text-white mt-1">Conceptual Glossary</h2>
+                        </div>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] uppercase tracking-widest text-mutedgray">Vocabulary</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-bold text-white uppercase tracking-wider text-xs">Fiduciary Stewardship</h4>
+                                <p class="text-mutedgray mt-1 leading-relaxed">
+                                    The legal and ethical obligation of board members to prioritize the institution’s long-term sustainability and educational mission over personal, corporate, or political interests (Regents Bylaw 21; Payette, 2001).
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white uppercase tracking-wider text-xs">Boundary Porosity</h4>
+                                <p class="text-mutedgray mt-1 leading-relaxed">
+                                    The degree to which institutional borders are open to external environments. High porosity allows trustees to act as "boundary spanners," connecting the university to corporate networks and resources (Barringer et al., 2022).
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white uppercase tracking-wider text-xs">Cybernetic Feedback Loops</h4>
+                                <p class="text-mutedgray mt-1 leading-relaxed">
+                                    Self-correcting mechanisms (like an institutional "thermostat") that monitor changes from acceptable levels of functioning and activate forces to return the institution to a stable state (Birnbaum, 1989).
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 border-l border-white/10 pl-0 md:pl-6">
+                            <div>
+                                <h4 class="font-bold text-white uppercase tracking-wider text-xs">The Institutional Umbrella</h4>
+                                <p class="text-mutedgray mt-1 leading-relaxed">
+                                    The conceptual framework wherein governing boards act as a protective barrier to shield the institution's academic freedom and autonomy from external political and legislative attacks (Rall et al., 2025).
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white uppercase tracking-wider text-xs">Shared Responsibility</h4>
+                                <p class="text-mutedgray mt-1 leading-relaxed">
+                                    A collaborative governance model where trustees, administrators, and faculty share key financial and operational realities to co-create strategic initiatives, shifting away from adversarial silos (Bahls, 2014).
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white uppercase tracking-wider text-xs">Form 700 / Statement of Interests</h4>
+                                <p class="text-mutedgray mt-1 leading-relaxed">
+                                    A public financial disclosure mandated by the California Fair Political Practices Commission (FPPC). It requires public officials to report assets, income, and business positions to detect potential conflicts of interest.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-4 border-t border-white/5 flex justify-between text-[9px] text-mutedgray uppercase tracking-widest">
+                    <span>Stewardship & Governance Index</span>
+                    <span>Document Page 2</span>
+                </div>
+            </div>
+
+            <!-- MODULE 3: STAKEHOLDER MATRIX -->
+            <div id="tab-stakeholders" class="module-content bg-obsidian border border-white/10 rounded-lg p-8 hidden flex-col justify-between min-h-[500px]">
+                <div class="space-y-6">
+                    <div class="flex justify-between items-start border-b border-white/10 pb-4">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-[0.25em] font-extrabold text-minimalgold">Module 03</span>
+                            <h2 class="text-3xl font-serif italic text-white mt-1">Stakeholder Intersectoral Mapping</h2>
+                        </div>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] uppercase tracking-widest text-mutedgray">Power Analysis</span>
+                    </div>
+
+                    <p class="text-xs text-mutedgray leading-relaxed">
+                        Higher education institutions operate under a framework of **Intersecting Authority** (Eckel & Kezar, 2016). Understanding where these jurisdictions overlap and create friction is essential for strategic planning.
+                    </p>
+
+                    <!-- Stakeholder Table -->
+                    <div class="overflow-x-auto rounded border border-white/10">
+                        <table class="min-w-full divide-y divide-white/10 text-xs text-left">
+                            <thead class="bg-white/5 text-white uppercase tracking-wider text-[10px]">
+                                <tr>
+                                    <th class="px-4 py-3 font-bold">Constituency</th>
+                                    <th class="px-4 py-3 font-bold">Primary Jurisdiction</th>
+                                    <th class="px-4 py-3 font-bold">Core Strategic Tension</th>
+                                    <th class="px-4 py-3 font-bold">Accountability Loop</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-white/10 text-mutedgray">
+                                <tr>
+                                    <td class="px-4 py-3 font-bold text-white">The Regents</td>
+                                    <td class="px-4 py-3">Fiduciary & Legal Stewardship (Bylaw 21)</td>
+                                    <td class="px-4 py-3">Balancing public education missions with corporate board connectivity.</td>
+                                    <td class="px-4 py-3">California State Senate, Constitution Art. IX</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-bold text-white">UC President</td>
+                                    <td class="px-4 py-3">Executive Management & Strategy Implementation</td>
+                                    <td class="px-4 py-3">Serving as a buffer between the board's corporate goals and faculty needs.</td>
+                                    <td class="px-4 py-3">Annual Board Performance Audits</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-bold text-white">Academic Senate</td>
+                                    <td class="px-4 py-3">Curriculum, Admissions, & Tenure (Bylaw 40)</td>
+                                    <td class="px-4 py-3">Slowing decisions to safeguard academic freedom vs. board efficiency.</td>
+                                    <td class="px-4 py-3">Collegial Consultation, Peer Review</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-bold text-white">Students</td>
+                                    <td class="px-4 py-3">Lived experience, Campus Climate, Activism</td>
+                                    <td class="px-4 py-3">Under-representation (1 student vote representing over 290,000 students).</td>
+                                    <td class="px-4 py-3">Episodic Activism, Open Forums</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="mt-8 pt-4 border-t border-white/5 flex justify-between text-[9px] text-mutedgray uppercase tracking-widest">
+                    <span>Stewardship & Governance Index</span>
+                    <span>Document Page 3</span>
+                </div>
+            </div>
+
+            <!-- MODULE 4: SCORECARD MECHANICS -->
+            <div id="tab-methodology" class="module-content bg-obsidian border border-white/10 rounded-lg p-8 hidden flex-col justify-between min-h-[500px]">
+                <div class="space-y-6">
+                    <div class="flex justify-between items-start border-b border-white/10 pb-4">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-[0.25em] font-extrabold text-minimalgold">Module 04</span>
+                            <h2 class="text-3xl font-serif italic text-white mt-1">Scorecard Methodology</h2>
+                        </div>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] uppercase tracking-widest text-mutedgray">Mechanics</span>
+                    </div>
+
+                    <div class="space-y-4 text-xs sm:text-sm text-mutedgray leading-relaxed">
+                        <p>
+                            To ensure academic and professional rigor, the **Stewardship & Governance Index (SGI)** calculates performance using a multi-factored qualitative scorecard. It assigns specific weights to key pillars derived from higher education governance literature:
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+                            <div class="p-4 bg-white/5 border border-white/10 rounded">
+                                <h4 class="font-bold text-white mb-2 uppercase tracking-widest text-[10px]">Evaluation Pillars & Weighting</h4>
+                                <ul class="space-y-2 text-xs">
+                                    <li class="flex justify-between"><span>1. Institutional Autonomy (Umbrella)</span> <span class="text-minimalgold font-bold">25%</span></li>
+                                    <li class="flex justify-between"><span>2. Boundary Network Integrity</span> <span class="text-minimalgold font-bold">20%</span></li>
+                                    <li class="flex justify-between"><span>3. Cybernetic Sensitivity</span> <span class="text-minimalgold font-bold">20%</span></li>
+                                    <li class="flex justify-between"><span>4. Fiduciary DEIJ Fluency</span> <span class="text-minimalgold font-bold">20%</span></li>
+                                    <li class="flex justify-between"><span>5. Relational Trust Capital</span> <span class="text-minimalgold font-bold">15%</span></li>
+                                </ul>
+                            </div>
+                            <div class="p-4 bg-white/5 border border-white/10 rounded flex flex-col justify-between">
+                                <div>
+                                    <h4 class="font-bold text-white mb-1 uppercase tracking-widest text-[10px]">Mathematical Formula</h4>
+                                    <p class="text-[11px] font-mono text-minimalgold mt-1">
+                                        SGI = 0.25(A) + 0.20(B) + 0.20(C) + 0.20(D) + 0.15(E)
+                                    </p>
+                                </div>
+                                <p class="text-[10px] mt-2 text-mutedgray">
+                                    Final scores are mapped to letter grades: <br>
+                                    <strong>&ge; 4.50:</strong> Grade A | <strong>3.50 - 4.49:</strong> Grade B | <strong>&lt; 3.50:</strong> Grade C
+                                </p>
+                            </div>
+                        </div>
+
+                        <h4 class="font-bold text-white uppercase tracking-wider text-xs">Measurement Rubric Scale (1.0 - 5.0)</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                            <div class="p-3 bg-carbon rounded">
+                                <span class="text-minimalgold font-serif italic font-bold">5.0 Star — Exceptional</span>
+                                <p class="text-mutedgray mt-1 text-[10px]">Evidence of written policies, public records of consistent alignment, proactive trust-building, and robust shielding of campus autonomy.</p>
+                            </div>
+                            <div class="p-3 bg-carbon rounded">
+                                <span class="text-minimalgold font-serif italic font-bold">3.0 Star — Meets Standard</span>
+                                <p class="text-mutedgray mt-1 text-[10px]">Formal structures exist (e.g., bylaws, open sessions) but the board remains passive, engaging with stakeholders primarily during crises.</p>
+                            </div>
+                            <div class="p-3 bg-carbon rounded">
+                                <span class="text-minimalgold font-serif italic font-bold">1.0 Star — Deficient</span>
+                                <p class="text-mutedgray mt-1 text-[10px]">Significant disconnect, regular circumvention of standard feedback systems, and unmitigated conflicts of interest.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-4 border-t border-white/5 flex justify-between text-[9px] text-mutedgray uppercase tracking-widest">
+                    <span>Stewardship & Governance Index</span>
+                    <span>Document Page 4</span>
+                </div>
+            </div>
+
+            <!-- MODULE 5: CASE STUDY -->
+            <div id="tab-case-study" class="module-content bg-obsidian border border-white/10 rounded-lg p-8 hidden flex-col justify-between min-h-[500px]">
+                <div class="space-y-6">
+                    <div class="flex justify-between items-start border-b border-white/10 pb-4">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-[0.25em] font-extrabold text-minimalgold">Module 05</span>
+                            <h2 class="text-3xl font-serif italic text-white mt-1">Example Application: UC Board of Regents</h2>
+                        </div>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] uppercase tracking-widest text-mutedgray">Case Study</span>
+                    </div>
+
+                    <div class="space-y-4 text-xs sm:text-sm text-mutedgray leading-relaxed max-h-[300px] overflow-y-auto pr-2 custom-scroll">
+                        <p>
+                            Applying the Stewardship & Governance Index to the **University of California Board of Regents** yields the following analytical assessment:
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-bold text-white text-xs uppercase tracking-wider">Pillar 1: Institutional Autonomy (SGI Rating: 3.5 / 5.0)</h4>
+                                <p class="text-mutedgray mt-1">
+                                    **Evidence:** Under Article IX, Section 9 of the California Constitution, the UC Regents hold a unique status as a "public trust." While the board is legally shielded from daily political management, it is highly sensitive to the state’s gubernatorial administration. Since **18 of the 26 voting members are direct appointments** by the Governor, the board frequently aligns with state political agendas, occasionally leading to friction during budget negotiations and campus safety crises.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-xs uppercase tracking-wider">Pillar 2: Boundary Network Integrity (SGI Rating: 4.2 / 5.0)</h4>
+                                <p class="text-mutedgray mt-1">
+                                    **Evidence:** Evaluating the board's public **Form 700 disclosures** shows that multiple appointed regents sit on the boards of major multinational corporations (e.g., **Uber, Disney**). While these corporate ties bring valuable financial expertise to UC's **$40B+ enterprise**, they present risks of structural alignment conflicts. The board maintains high compliance with public disclosure, but lacks structured boundary audits.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-xs uppercase tracking-wider">Pillar 3: Cybernetic Sensitivity (SGI Rating: 3.0 / 5.0)</h4>
+                                <p class="text-mutedgray mt-1">
+                                    **Evidence:** The board formally interacts with the Academic Senate via **Bylaw 40** (which delegates course design and curriculum authority to faculty). However, the board's communication style is often reactive rather than proactive. It tends to view the Academic Senate and student councils as bodies to consult post-decision, bypassing Birnbaum's (1989) cybernetic feedback loops until a crisis arises.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-xs uppercase tracking-wider">Pillar 4: Fiduciary DEIJ Fluency (SGI Rating: 2.5 / 5.0)</h4>
+                                <p class="text-mutedgray mt-1">
+                                    **Evidence:** Content analysis of board minutes reveals that the Regents often exhibit the **"Electrical Socket" dynamic** (Morgan et al., 2022). DEI is heavily integrated into formal symbolic plans, but is rarely embedded into standard fiduciary resource allocation or line-item audits.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-xs uppercase tracking-wider">Pillar 5: Relational Trust Capital (SGI Rating: 2.8 / 5.0)</h4>
+                                <p class="text-mutedgray mt-1">
+                                    **Evidence:** There is a distinct "Representational Gap" on the board. With only **one voting student regent representing over 290,000 students**, the board's relational trust capital remains low. Activism and public comment are the primary channels for student feedback, signaling a breakdown in relational, trust-based leadership (Kezar, 2004).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-4 border-t border-white/5 flex justify-between text-[9px] text-mutedgray uppercase tracking-widest">
+                    <span>Stewardship & Governance Index</span>
+                    <span>Document Page 5</span>
+                </div>
+            </div>
+
+            <!-- MODULE 6: LIVE CALCULATOR -->
+            <div id="tab-calculator" class="module-content bg-obsidian border border-white/10 rounded-lg p-8 hidden flex-col justify-between min-h-[500px]">
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-[0.25em] font-extrabold text-minimalgold">Module 06</span>
+                            <h2 class="text-2xl font-serif text-white italic">Interactive SGI Simulator</h2>
+                        </div>
+                        <div class="bg-carbon border border-white/10 px-4 py-2 rounded text-center">
+                            <span class="text-[8px] uppercase tracking-widest text-minimalgold block">Weighted SGI Score</span>
+                            <span id="score-val" class="text-lg font-black font-serif">3.00</span> <span class="text-[9px] text-mutedgray">/ 5.0</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+                        <div class="space-y-4 max-h-[220px] overflow-y-auto pr-2 custom-scroll">
+                            <!-- Metric 1 -->
+                            <div class="space-y-1">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-white uppercase tracking-wider">1. Institutional Autonomy (25% Weight)</span>
+                                    <span id="v1" class="text-minimalgold font-bold">3.0</span>
+                                </div>
+                                <input type="range" id="s1" min="1.0" max="5.0" step="0.1" value="3.5" oninput="runCalibrator()" class="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-minimalgold">
+                            </div>
+                            <!-- Metric 2 -->
+                            <div class="space-y-1">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-white uppercase tracking-wider">2. Boundary Porosity Integrity (20% Weight)</span>
+                                    <span id="v2" class="text-minimalgold font-bold">3.0</span>
+                                </div>
+                                <input type="range" id="s2" min="1.0" max="5.0" step="0.1" value="4.2" oninput="runCalibrator()" class="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-minimalgold">
+                            </div>
+                            <!-- Metric 3 -->
+                            <div class="space-y-1">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-white uppercase tracking-wider">3. Cybernetic Feedback (20% Weight)</span>
+                                    <span id="v3" class="text-minimalgold font-bold">3.0</span>
+                                </div>
+                                <input type="range" id="s3" min="1.0" max="5.0" step="0.1" value="3.0" oninput="runCalibrator()" class="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-minimalgold">
+                            </div>
+                            <!-- Metric 4 -->
+                            <div class="space-y-1">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-white uppercase tracking-wider">4. Fiduciary DEIJ Fluency (20% Weight)</span>
+                                    <span id="v4" class="text-minimalgold font-bold">3.0</span>
+                                </div>
+                                <input type="range" id="s4" min="1.0" max="5.0" step="0.1" value="2.5" oninput="runCalibrator()" class="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-minimalgold">
+                            </div>
+                            <!-- Metric 5 -->
+                            <div class="space-y-1">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-white uppercase tracking-wider">5. Relational Trust Capital (15% Weight)</span>
+                                    <span id="v5" class="text-minimalgold font-bold">3.0</span>
+                                </div>
+                                <input type="range" id="s5" min="1.0" max="5.0" step="0.1" value="2.8" oninput="runCalibrator()" class="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-minimalgold">
+                            </div>
+                        </div>
+
+                        <!-- Calibrator Recommendation Output -->
+                        <div class="bg-carbon/50 p-5 rounded border border-white/10 flex flex-col justify-between">
+                            <div>
+                                <h4 class="text-xs uppercase tracking-wider font-extrabold text-white mb-2">Consulting Recommendations</h4>
+                                <p id="calibrator-feedback" class="text-mutedgray leading-relaxed text-[11px]">
+                                    Calibrate the sliders on the left to determine the operational health score of the UC Regents.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[9px]">
+                                <span class="text-mutedgray">GPA Grade Class:</span>
+                                <span id="status-tag" class="text-minimalgold font-bold uppercase tracking-widest">Grade B</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/5 flex justify-between text-[9px] text-mutedgray uppercase tracking-widest">
+                    <span>Stewardship & Governance Index</span>
+                    <span>Document Page 6</span>
+                </div>
+            </div>
+
+            <!-- MODULE 7: REFERENCES -->
+            <div id="tab-citations" class="module-content bg-obsidian border border-white/10 rounded-lg p-8 hidden flex-col justify-between min-h-[500px]">
+                <div class="space-y-6">
+                    <div class="flex justify-between items-start border-b border-white/10 pb-4">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-[0.25em] font-extrabold text-minimalgold">Module 07</span>
+                            <h2 class="text-3xl font-serif italic text-white mt-1">Literature Citations & Bibliography</h2>
+                        </div>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] uppercase tracking-widest text-mutedgray">Academic</span>
+                    </div>
+
+                    <!-- Peer-reviewed References List -->
+                    <div class="space-y-4 text-xs text-mutedgray leading-relaxed max-h-[300px] overflow-y-auto pr-2 custom-scroll">
+                        <p class="border-b border-white/5 pb-2">
+                            <strong class="text-white block">Bahls, S. C. (2014).</strong>
+                            "How to Make Shared Governance Work: Some Best Practices." <em>Trusteeship</em>, 22(2).
+                        </p>
+                        <p class="border-b border-white/5 pb-2">
+                            <strong class="text-white block">Barringer, S. N., Taylor, B. J., Riffe, K. A., & Slaughter, S. (2022).</strong>
+                            "How University Leaders Shape Boundaries and Behaviors: An Empirical Examination of Trustee Involvement at Elite US Research Universities." <em>Higher Education Policy</em>, 35, 102–132.
+                        </p>
+                        <p class="border-b border-white/5 pb-2">
+                            <strong class="text-white block">Birnbaum, R. (1989).</strong>
+                            "The Latent Organizational Functions of the Academic Senate: Why Senates Do Not Work But Will Not Go Away." <em>The Journal of Higher Education</em>, 60(4), 423-443.
+                        </p>
+                        <p class="border-b border-white/5 pb-2">
+                            <strong class="text-white block">Birnbaum, R. (1989).</strong>
+                            "The Cybernetic Institution: Toward an Integration of Governance Theories." <em>Higher Education</em>, 18, 239–253.
+                        </p>
+                        <p class="border-b border-white/5 pb-2">
+                            <strong class="text-white block">Eckel, P. D., & Kezar, A. (2016).</strong>
+                            "The Intersecting Authority of Boards, Presidents, and Faculty: Toward Shared Leadership." <em>American Higher Education in the Twenty-First Century</em>, 155–187.
+                        </p>
+                        <p class="border-b border-white/5 pb-2">
+                            <strong class="text-white block">Kezar, A. (2004).</strong>
+                            "What Is More Important to Effective Governance: Relationships, Trust, and Leadership, or Structures and Formal Processes?" <em>New Directions for Higher Education</em>.
+                        </p>
+                        <p class="border-b border-white/5 pb-2">
+                            <strong class="text-white block">Morgan, D. L., LePeau, L. A., & Commodore, F. (2022).</strong>
+                            "Observable Evidence and Partnership Possibilities for Governing Board Involvement in Diversity, Equity, and Inclusion: A Content Analysis." <em>Research in Higher Education</em>, 63, 189–221.
+                        </p>
+                        <p class="border-b border-white/5 pb-2">
+                            <strong class="text-white block">Rall, R. M., & Dominguez, V. (2025).</strong>
+                            "Why Boards Must 'Do Their Job' to Save Academic Freedom." <em>Center for Strategic and Inclusive Governance</em>.
+                        </p>
+                        <p class="border-b border-white/5 pb-2">
+                            <strong class="text-white block">Rall, R. M., MacCormack, J., & Gentlewarrior, S. (2020).</strong>
+                            "From Intentions to Impact: Practical Lessons for Boards of Trustees in Shaping and Advancing Equity in Higher Education." <em>REJI Handbook</em>, Vol 2.
+                        </p>
+                        <p class="border-b border-white/5 pb-2">
+                            <strong class="text-white block">Rall, R. M., Morgan, D. L., Dominguez, V., Morgan, J., & Hall, N. D. (2025).</strong>
+                            "Governing Boards as Institutional Umbrellas: A Framework for Strategic Governance Amid Legislative Challenges." <em>The Journal of Higher Education</em>, 96(7), 1376-1408.
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-8 pt-4 border-t border-white/5 flex justify-between text-[9px] text-mutedgray uppercase tracking-widest">
+                    <span>Stewardship & Governance Index</span>
+                    <span>Document Page 7</span>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Playbook Footer -->
+    <footer class="bg-obsidian border-t border-white/10 py-6 px-6 text-center md:text-left">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-[9px] text-mutedgray uppercase tracking-widest">
+            <p>&copy; 2026 UC Board of Regents Stewardship & Governance Playbook. Built for UCR Business School.</p>
+            <div class="flex space-x-4">
+                <span class="text-minimalgold font-bold">Sarah Ogden, MBA (c)</span>
+                <span>/</span>
+                <span>EDUC 248G Portfolio</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Playbook State Script -->
+    <script>
+        function switchModule(moduleId) {
+            // Hide all tab content
+            document.querySelectorAll('.module-content').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('flex');
+            });
+            // Reset nav states
+            document.querySelectorAll('.module-btn').forEach(btn => btn.classList.remove('active-tab'));
+
+            // Show selected tab content
+            const activeContent = document.getElementById('tab-' + moduleId);
+            activeContent.classList.remove('hidden');
+            activeContent.classList.add('flex');
+            
+            // Activate button styles
+            document.getElementById('mod-' + moduleId).classList.add('active-tab');
+        }
+
+        function runCalibrator() {
+            const s1 = parseFloat(document.getElementById('s1').value);
+            const s2 = parseFloat(document.getElementById('s2').value);
+            const s3 = parseFloat(document.getElementById('s3').value);
+            const s4 = parseFloat(document.getElementById('s4').value);
+            const s5 = parseFloat(document.getElementById('s5').value);
+
+            // Update range labels
+            document.getElementById('v1').innerText = s1.toFixed(1);
+            document.getElementById('v2').innerText = s2.toFixed(1);
+            document.getElementById('v3').innerText = s3.toFixed(1);
+            document.getElementById('v4').innerText = s4.toFixed(1);
+            document.getElementById('v5').innerText = s5.toFixed(1);
+
+            // Compute weighted SGI
+            const finalScore = (s1 * 0.25) + (s2 * 0.20) + (s3 * 0.20) + (s4 * 0.20) + (s5 * 0.15);
+            document.getElementById('score-val').innerText = finalScore.toFixed(2);
+
+            const feedback = document.getElementById('calibrator-feedback');
+            const statusTag = document.getElementById('status-tag');
+
+            if (finalScore >= 4.50) {
+                statusTag.innerText = "GRADE A";
+                statusTag.className = "text-green-400 font-bold uppercase tracking-widest";
+                feedback.innerHTML = "<strong>Stewardship Assessment:</strong> The Board exhibits exemplary governance. The system effectively shields institutional autonomy (Rall et al., 2025) and balances corporate board connectivity with fiduciary duties. Recommendation: Institutionalize student voting expansion and implement continuous, proactive joint committees.";
+            } else if (finalScore >= 3.50) {
+                statusTag.innerText = "GRADE B";
+                statusTag.className = "text-minimalgold font-bold uppercase tracking-widest";
+                feedback.innerHTML = "<strong>Stewardship Assessment:</strong> Fiduciary operations are structurally sound, but relational capital needs focus. Move past crisis-driven stakeholder consultations (Morgan et al., 2022). Adopt a formal model of <strong>Shared Responsibility (Bahls, 2014)</strong> to co-create academic/fiscal strategies.";
+            } else {
+                statusTag.innerText = "GRADE C";
+                statusTag.className = "text-red-400 font-bold uppercase tracking-widest";
+                feedback.innerHTML = "<strong>Stewardship Assessment:</strong> Critical vulnerabilities detected. Episodic interaction and high political connectivity are straining internal campus relations. Action: Audit Form 700 filings to prevent mission creep, expand student voting power, and restore transparent communication channels.";
+            }
+        }
+
+        // Initialize App State
+        window.onload = function() {
+            switchModule('exec-summary');
+            runCalibrator();
+        };
+    </script>
+</body>
+</html>
