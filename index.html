@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="flex items-center space-x-3 text-xs uppercase tracking-[0.15em] font-bold">
-                <span class="text-minimalgold">Higher Education Goverance Evaluation through an MBA Lens</span>
+                <span class="text-minimalgold">Higher Education Governance Evaluation through an MBA Lens</span>
                 <span class="text-white/20">/</span>
                 <span class="text-mutedgray">EDUC 248G: Higher Education Governance Deliverable</span>
             </div>
@@ -421,67 +421,132 @@
                         </div>
                         <div class="bg-carbon border border-white/10 px-4 py-2 rounded text-center">
                             <span class="text-[8px] uppercase tracking-widest text-minimalgold block">Weighted SGI Score</span>
-                            <span id="score-val" class="text-lg font-black font-serif">3.00</span> <span class="text-[9px] text-mutedgray">/ 5.0</span>
+                            <span id="score-val" class="text-lg font-black font-serif">3.21</span> <span class="text-[9px] text-mutedgray">/ 5.0</span>
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
-                        <div class="space-y-4 max-h-[220px] overflow-y-auto pr-2 custom-scroll">
+                    <!-- Main Grid Layout with Interactive Inputs and Analytical Metadata -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 text-xs">
+                        
+                        <!-- LEFT PANEL: Dynamic Sliders & Metric Explanations (lg:col-span-7) -->
+                        <div class="lg:col-span-7 space-y-5 max-h-[420px] overflow-y-auto pr-2 custom-scroll">
+                            
                             <!-- Metric 1 -->
-                            <div class="space-y-1">
+                            <div class="bg-white/5 p-3 rounded border border-white/5 space-y-2">
                                 <div class="flex justify-between items-center">
                                     <span class="font-bold text-white uppercase tracking-wider">1. Institutional Autonomy (25% Weight)</span>
-                                    <span id="v1" class="text-minimalgold font-bold">3.0</span>
+                                    <span id="v1" class="text-minimalgold font-bold">3.5</span>
                                 </div>
                                 <input type="range" id="s1" min="1.0" max="5.0" step="0.1" value="3.5" oninput="runCalibrator()" class="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-minimalgold">
+                                <div class="grid grid-cols-2 gap-2 text-[10px] pt-1 text-mutedgray border-t border-white/5">
+                                    <div>
+                                        <span class="text-white font-semibold">What is Checked:</span>
+                                        <p class="leading-normal">Shielding policies, defense of academic freedom, and structural resistance to gubernatorial or partisan political agendas.</p>
+                                    </div>
+                                    <div>
+                                        <span class="text-white font-semibold">Why Weighted 25%:</span>
+                                        <p class="leading-normal">Autonomy is the baseline. As the 'Institutional Umbrella' (Rall et al., 2025), if a board cannot shield scholars from state interference, other governance pillars fail.</p>
+                                    </div>
+                                </div>
                             </div>
+
                             <!-- Metric 2 -->
-                            <div class="space-y-1">
+                            <div class="bg-white/5 p-3 rounded border border-white/5 space-y-2">
                                 <div class="flex justify-between items-center">
                                     <span class="font-bold text-white uppercase tracking-wider">2. Boundary Porosity Integrity (20% Weight)</span>
-                                    <span id="v2" class="text-minimalgold font-bold">3.0</span>
+                                    <span id="v2" class="text-minimalgold font-bold">4.2</span>
                                 </div>
                                 <input type="range" id="s2" min="1.0" max="5.0" step="0.1" value="4.2" oninput="runCalibrator()" class="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-minimalgold">
+                                <div class="grid grid-cols-2 gap-2 text-[10px] pt-1 text-mutedgray border-t border-white/5">
+                                    <div>
+                                        <span class="text-white font-semibold">What is Checked:</span>
+                                        <p class="leading-normal">Form 700 declarations, external corporate network overlaps, and systemic checks against private/market-driven interests.</p>
+                                    </div>
+                                    <div>
+                                        <span class="text-white font-semibold">Why Weighted 20%:</span>
+                                        <p class="leading-normal">Elite boards are highly porous (Barringer et al., 2022). Unmitigated corporate conflicts threaten the fiduciary commitment to higher education as a public trust.</p>
+                                    </div>
+                                </div>
                             </div>
+
                             <!-- Metric 3 -->
-                            <div class="space-y-1">
+                            <div class="bg-white/5 p-3 rounded border border-white/5 space-y-2">
                                 <div class="flex justify-between items-center">
-                                    <span class="font-bold text-white uppercase tracking-wider">3. Cybernetic Feedback (20% Weight)</span>
+                                    <span class="font-bold text-white uppercase tracking-wider">3. Cybernetic Sensitivity (20% Weight)</span>
                                     <span id="v3" class="text-minimalgold font-bold">3.0</span>
                                 </div>
                                 <input type="range" id="s3" min="1.0" max="5.0" step="0.1" value="3.0" oninput="runCalibrator()" class="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-minimalgold">
+                                <div class="grid grid-cols-2 gap-2 text-[10px] pt-1 text-mutedgray border-t border-white/5">
+                                    <div>
+                                        <span class="text-white font-semibold">What is Checked:</span>
+                                        <p class="leading-normal">Latency in responding to Faculty Senate actions, adherence to Bylaw 40, and the presence of non-crisis administrative feedback channels.</p>
+                                    </div>
+                                    <div>
+                                        <span class="text-white font-semibold">Why Weighted 20%:</span>
+                                        <p class="leading-normal">Cybernetic self-correction (Birnbaum, 1989) is key to campus health. Slower stakeholder feedback acts as a strategic thermostat to prevent institutional crisis.</p>
+                                    </div>
+                                </div>
                             </div>
+
                             <!-- Metric 4 -->
-                            <div class="space-y-1">
+                            <div class="bg-white/5 p-3 rounded border border-white/5 space-y-2">
                                 <div class="flex justify-between items-center">
                                     <span class="font-bold text-white uppercase tracking-wider">4. Fiduciary DEIJ Fluency (20% Weight)</span>
-                                    <span id="v4" class="text-minimalgold font-bold">3.0</span>
+                                    <span id="v4" class="text-minimalgold font-bold">2.5</span>
                                 </div>
                                 <input type="range" id="s4" min="1.0" max="5.0" step="0.1" value="2.5" oninput="runCalibrator()" class="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-minimalgold">
+                                <div class="grid grid-cols-2 gap-2 text-[10px] pt-1 text-mutedgray border-t border-white/5">
+                                    <div>
+                                        <span class="text-white font-semibold">What is Checked:</span>
+                                        <p class="leading-normal">Alignment of diversity goals with line-item resource allocation, capital budgets, and regular performance evaluations.</p>
+                                    </div>
+                                    <div>
+                                        <span class="text-white font-semibold">Why Weighted 20%:</span>
+                                        <p class="leading-normal">This counteracts the 'Electrical Socket' dynamic (Morgan et al., 2022) by ensuring equity remains a steady, active commitment instead of a reactive public PR tool.</p>
+                                    </div>
+                                </div>
                             </div>
+
                             <!-- Metric 5 -->
-                            <div class="space-y-1">
+                            <div class="bg-white/5 p-3 rounded border border-white/5 space-y-2">
                                 <div class="flex justify-between items-center">
                                     <span class="font-bold text-white uppercase tracking-wider">5. Relational Trust Capital (15% Weight)</span>
-                                    <span id="v5" class="text-minimalgold font-bold">3.0</span>
+                                    <span id="v5" class="text-minimalgold font-bold">2.8</span>
                                 </div>
                                 <input type="range" id="s5" min="1.0" max="5.0" step="0.1" value="2.8" oninput="runCalibrator()" class="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-minimalgold">
+                                <div class="grid grid-cols-2 gap-2 text-[10px] pt-1 text-mutedgray border-t border-white/5">
+                                    <div>
+                                        <span class="text-white font-semibold">What is Checked:</span>
+                                        <p class="leading-normal">The Representation Gap, the structure of student/staff advisory roles, and proactive non-crisis engagements with the campus.</p>
+                                    </div>
+                                    <div>
+                                        <span class="text-white font-semibold">Why Weighted 15%:</span>
+                                        <p class="leading-normal">Trust is the 'social glue' of governance (Kezar, 2004). Strong relationships ensure that hard decisions can be made without causing structural division.</p>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
 
-                        <!-- Calibrator Recommendation Output -->
-                        <div class="bg-carbon/50 p-5 rounded border border-white/10 flex flex-col justify-between">
+                        <!-- RIGHT PANEL: Dynamic Action Outputs & Real-Time Grading (lg:col-span-5) -->
+                        <div class="lg:col-span-5 bg-carbon/50 p-5 rounded border border-white/10 flex flex-col justify-between space-y-4">
                             <div>
-                                <h4 class="text-xs uppercase tracking-wider font-extrabold text-white mb-2">Consulting Recommendations</h4>
-                                <p id="calibrator-feedback" class="text-mutedgray leading-relaxed text-[11px]">
-                                    Calibrate the sliders on the left to determine the operational health score of the UC Regents.
-                                </p>
+                                <h4 class="text-xs uppercase tracking-wider font-extrabold text-white border-b border-white/10 pb-2 mb-3">Live SGI Consulting Analysis</h4>
+                                <div class="space-y-3">
+                                    <div>
+                                        <span class="text-[10px] uppercase tracking-wider text-minimalgold font-bold block mb-1">Stewardship Grade Performance</span>
+                                        <p id="calibrator-feedback" class="text-mutedgray leading-relaxed text-[11px]">
+                                            Calibrate the sliders on the left to determine the operational health score of the UC Regents.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[9px]">
-                                <span class="text-mutedgray">GPA Grade Class:</span>
+                            <div class="pt-3 border-t border-white/5 flex items-center justify-between text-[9px] mt-auto">
+                                <span class="text-mutedgray uppercase font-bold tracking-widest">Calculated Status:</span>
                                 <span id="status-tag" class="text-minimalgold font-bold uppercase tracking-widest">Grade B</span>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <div class="mt-4 pt-4 border-t border-white/5 flex justify-between text-[9px] text-mutedgray uppercase tracking-widest">
@@ -556,7 +621,7 @@
     </div>
 
     <!-- Playbook Footer -->
-    <footer class="bg-obsidian border-t border-white/10 py-6 px-6 text-center md:text-left">
+    <footer class="bg-obsidian border-t border-white/10 py-6 px-6 text-center md:text-left mt-auto">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-[9px] text-mutedgray uppercase tracking-widest">
             <p>&copy; 2026 UC Board of Regents Stewardship & Governance Playbook.</p>
             <div class="flex space-x-4">
@@ -611,15 +676,15 @@
             if (finalScore >= 4.50) {
                 statusTag.innerText = "GRADE A";
                 statusTag.className = "text-green-400 font-bold uppercase tracking-widest";
-                feedback.innerHTML = "<strong>Stewardship Assessment:</strong> The Board exhibits exemplary governance. The system effectively shields institutional autonomy (Rall et al., 2025) and balances corporate board connectivity with fiduciary duties. Recommendation: Institutionalize student voting expansion and implement continuous, proactive joint committees.";
+                feedback.innerHTML = "<strong>Strategic Action Plan (Grade A Profile):</strong> The Board exhibits exemplary public trust stewardship. By maintaining high institutional autonomy while balancing boundary connections, it actively operates as a protective shield. <br><br><strong>Key Action:</strong> Formally support and codify legislative measures to expand student voting positions, eliminating the historical representation gap, and lock in non-crisis consultation structures.";
             } else if (finalScore >= 3.50) {
                 statusTag.innerText = "GRADE B";
                 statusTag.className = "text-minimalgold font-bold uppercase tracking-widest";
-                feedback.innerHTML = "<strong>Stewardship Assessment:</strong> Fiduciary operations are structurally sound, but relational capital needs focus. Move past crisis-driven stakeholder consultations (Morgan et al., 2022). Adopt a formal model of <strong>Shared Responsibility (Bahls, 2014)</strong> to co-create academic/fiscal strategies.";
+                feedback.innerHTML = "<strong>Strategic Action Plan (Grade B Profile):</strong> Fiduciary and network connections are structurally robust, but the board's relational trust and continuous commitment to diversity require calibration. SGI indicators reveal that DEIJ efforts operate with a reactive 'electrical socket' dynamic. <br><br><strong>Key Action:</strong> Transition from mere consultation to a <strong>Shared Responsibility (Bahls, 2014)</strong> model. Hold informal, non-crisis advisory forums with campus staff and Academic Senate members to integrate equity directly into capital planning.";
             } else {
                 statusTag.innerText = "GRADE C";
                 statusTag.className = "text-red-400 font-bold uppercase tracking-widest";
-                feedback.innerHTML = "<strong>Stewardship Assessment:</strong> Critical vulnerabilities detected. Episodic interaction and high political connectivity are straining internal campus relations. Action: Audit Form 700 filings to prevent mission creep, expand student voting power, and restore transparent communication channels.";
+                feedback.innerHTML = "<strong>Strategic Action Plan (Grade C Profile):</strong> High risk vectors detected. The board displays a strong structural detachment from internal campus constituencies. Political appointments and commercial network porosity are creating tension with the core public educational mission. <br><br><strong>Key Action:</strong> Conduct an immediate, independent audit of Form 700 disclosures to address boundary conflicts. Promptly implement transparency reforms, and restore direct, proactive consultation protocols.";
             }
         }
 
