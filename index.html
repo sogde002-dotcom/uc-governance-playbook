@@ -18,7 +18,7 @@
                         carbon: '#1C1C1C',
                         softbone: '#F4F4F1',
                         minimalgold: '#C5A059',
-                        mutedgray: '#7A7A7A',
+                        mutedgray: '#CCCCCC', /* Enhanced color contrast for perfect readability on dark backgrounds */
                         accentsand: '#E6DFD3'
                     },
                     fontFamily: {
@@ -30,7 +30,7 @@
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&family=Playfair+Display:ital,wght=0,400;0,600;0,700;1,400&display=swap');
         
         /* Premium custom scrollbar */
         .custom-scroll::-webkit-scrollbar {
@@ -61,13 +61,13 @@
                 <div class="h-6 w-[1px] bg-white/20"></div>
                 <div>
                     <h1 class="text-xs uppercase tracking-[0.2em] font-extrabold text-white">The Stewardship & Governance Index (SGI)</h1>
-                    <p class="text-[9px] text-mutedgray uppercase tracking-widest font-semibold">University of California Board of Regents Assessment</p>
+                    <p class="text-[9px] text-zinc-400 uppercase tracking-widest font-semibold">University of California Board of Regents Assessment</p>
                 </div>
             </div>
             <div class="flex items-center space-x-3 text-xs uppercase tracking-[0.15em] font-bold">
-                <span class="text-minimalgold">Higher Education Governance Evaluation through an MBA Lens</span>
+                <span class="text-minimalgold">MBA Strategic Framework</span>
                 <span class="text-white/20">/</span>
-                <span class="text-mutedgray">EDUC 248G: Higher Education Governance Deliverable</span>
+                <span class="text-mutedgray">EDUC 248G Portfolio Deliverable</span>
             </div>
         </div>
     </header>
@@ -78,33 +78,33 @@
         <!-- Sidebar Navigation -->
         <aside class="w-full lg:w-1/4 flex flex-col gap-4">
             <div class="bg-obsidian rounded-lg p-6 border border-white/10">
-                <h2 class="text-[10px] font-bold text-mutedgray uppercase tracking-widest mb-4">Playbook Modules</h2>
+                <h2 class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-4">Playbook Modules</h2>
                 <nav class="flex flex-col gap-1">
-                    <button onclick="switchModule('exec-summary')" id="mod-exec-summary" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-mutedgray hover:text-white">
+                    <button onclick="switchModule('exec-summary')" id="mod-exec-summary" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-zinc-400 hover:text-white">
                         <i class="fa-solid fa-file-contract text-sm w-5"></i>
                         <span>Executive Summary</span>
                     </button>
-                    <button onclick="switchModule('definitions')" id="mod-definitions" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-mutedgray hover:text-white">
+                    <button onclick="switchModule('definitions')" id="mod-definitions" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-zinc-400 hover:text-white">
                         <i class="fa-solid fa-spell-check text-sm w-5"></i>
                         <span>Key Glossary</span>
                     </button>
-                    <button onclick="switchModule('stakeholders')" id="mod-stakeholders" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-mutedgray hover:text-white">
+                    <button onclick="switchModule('stakeholders')" id="mod-stakeholders" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-zinc-400 hover:text-white">
                         <i class="fa-solid fa-users-viewfinder text-sm w-5"></i>
                         <span>Stakeholder Matrix</span>
                     </button>
-                    <button onclick="switchModule('methodology')" id="mod-methodology" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-mutedgray hover:text-white">
+                    <button onclick="switchModule('methodology')" id="mod-methodology" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-zinc-400 hover:text-white">
                         <i class="fa-solid fa-sliders text-sm w-5"></i>
                         <span>Scorecard Mechanics</span>
                     </button>
-                    <button onclick="switchModule('case-study')" id="mod-case-study" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-mutedgray hover:text-white">
+                    <button onclick="switchModule('case-study')" id="mod-case-study" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-zinc-400 hover:text-white">
                         <i class="fa-solid fa-magnifying-glass-chart text-sm w-5"></i>
                         <span>UC Regents Case</span>
                     </button>
-                    <button onclick="switchModule('calculator')" id="mod-calculator" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-mutedgray hover:text-white">
+                    <button onclick="switchModule('calculator')" id="mod-calculator" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-zinc-400 hover:text-white">
                         <i class="fa-solid fa-square-poll-vertical text-sm w-5"></i>
                         <span>Live Scorecard</span>
                     </button>
-                    <button onclick="switchModule('citations')" id="mod-citations" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-mutedgray hover:text-white">
+                    <button onclick="switchModule('citations')" id="mod-citations" class="module-btn w-full text-left px-4 py-3 rounded text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-3 text-zinc-400 hover:text-white">
                         <i class="fa-solid fa-book-bookmark text-sm w-5"></i>
                         <span>Literature & Citations</span>
                     </button>
@@ -118,13 +118,13 @@
                 </div>
                 <p class="text-[9px] font-bold text-minimalgold uppercase tracking-widest mb-2">The MBA Strategy Lens</p>
                 <p class="font-serif italic text-sm text-gray-300 leading-relaxed mb-4">
-                    "Traditional corporate governance evaluates performance based on financial metrics, historically. However, in the public higher education systems, the ultimate bottom line is the preservation of the academic mission, democratic access, and institutional autonomy."
+                    "Traditional corporate governance evaluates performance based on financial metrics, historically. However, in public higher education systems, the ultimate bottom line is the preservation of the academic mission, democratic access, and institutional autonomy."
                 </p>
                 <div class="border-t border-white/10 pt-3 flex items-center gap-3">
                     <div class="bg-minimalgold text-pitchblack w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs">SO</div>
                     <div>
                         <p class="text-xs font-bold">Sarah Ogden, MBA (c)</p>
-                        <p class="text-[9px] text-mutedgray">UC Riverside School of Business</p>
+                        <p class="text-[9px] text-zinc-400">UC Riverside School of Business</p>
                     </div>
                 </div>
             </div>
@@ -141,7 +141,7 @@
                             <span class="text-[10px] uppercase tracking-[0.25em] font-extrabold text-minimalgold">Module 01</span>
                             <h2 class="text-3xl font-serif italic text-white mt-1">Executive Summary</h2>
                         </div>
-                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] uppercase tracking-widest text-mutedgray">Briefing</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] uppercase tracking-widest text-zinc-400">Briefing</span>
                     </div>
 
                     <div class="prose max-w-none text-mutedgray text-xs sm:text-sm space-y-4 leading-relaxed">
@@ -150,20 +150,20 @@
                         </p>
                         <hr class="border-white/10">
                         <p>
-                            In today's climate public higher education, governing boards are facing intense challenges at an unprecedented speed. Those challenges include structural funding deficits, changing student demographics, and rising external political pressures (Pierce, 2014; Rall et al., 2025). Regardless of the governing boards holding all legal authority, boards are rarely evaluated using standardized metrics. Within this summary, there will be the introduction of the Stewardship & Governance Index (SGI), which is a performance-evaluation framework that captures latest academic governance literature into key performance indicators.
+                            In today's climate of public higher education, governing boards are facing intense challenges at an unprecedented speed. These challenges include structural funding deficits, changing student demographics, and rising external political pressures (Pierce, 2014; Rall et al., 2025). Although governing boards hold ultimate legal authority, they are rarely evaluated using standardized, objective metrics. To address this structural accountability gap, this booklet introduces the <strong>Stewardship & Governance Index (SGI)</strong>—a robust performance-evaluation framework that translates contemporary academic governance literature into actionable key performance indicators.
                         </p>
                         <p>
-                            Methodological Framework: In Birnbaum, 1989 the idea of a cybernetic perspective of academic institutions showcases the SGI evaluation of boards across five core dimensions. Those being Institutional Autonomy, Boundary Network Integrity, Cybernetic Sensitivity, Fiduciary DEIJ Fluency, and Relational Trust Capital. Within these dimensions the five star rubric utilizes observable evidence like public bylaws, state constitutional mandates and asset disclosures (Form 700).
+                            <strong>Methodological Framework:</strong> Drawing on Birnbaum's (1989) cybernetic perspective of academic institutions, the SGI evaluates governing boards across five core dimensions: <em>Institutional Autonomy</em>, <em>Boundary Porosity Integrity</em>, <em>Cybernetic Sensitivity</em>, <em>Fiduciary DEIJ Fluency</em>, and <em>Relational Trust Capital</em>. Within these dimensions, a five-star rubric utilizes observable evidence, including public bylaws, state constitutional mandates, and asset disclosures (Form 700). 
                         </p>
                         <p>
-                            Core Findings (Evaluated Institute: UC Board of Regents): Within the core findings using the SGI of the University of California Board of Regents has a complex profile. While the Board of Regents scores highly in the Boundary Network Integrity there is a large gap in the "Representation Gap" of its student body. The board scored high in the Boundary Network Integrity due to its high connectivity of its corporate networks (Barringer et al., 2022) and strong financial literacy. Contrastly, the board is composed of 26 voting seats, but only one of those voting members is a student. Shockingly enough, the UC system represents 290,000 constituents and only one student represents that entire body. Lastly, the board shows the "Electrical Socket" dynamic (Morgan et al., 2022). During DEIJ initiatives, showing episodic, crisis-driven intervention rather than continuous, systemic integration.
+                            <strong>Core Findings (Evaluated Institution: UC Board of Regents):</strong> Utilizing the SGI, our assessment of the University of California Board of Regents reveals a complex profile. While the Board of Regents scores highly in <em>Boundary Porosity Integrity</em> due to the high connectivity of its corporate networks (Barringer et al., 2022) and strong financial literacy, there is an acute <strong>"Representation Gap"</strong> regarding its student body. The UC system represents over 290,000 constituents, yet only a single Student Regent represents that entire body. Furthermore, the board exhibits an <strong>"Electrical Socket" dynamic</strong> (Morgan et al., 2022) regarding diversity, equity, inclusion, and justice (DEIJ) initiatives, showing episodic, crisis-driven intervention rather than continuous, systemic integration.
                         </p>
                         <p>
-                            Strategic Recommendation: To bridge the gap between the command of control to a true shared stewardship, the board must transition from a traditional shared governance to shared responsibility framework. (Bahls, 2014). This looks like increasing the student voting seats, establishing rigourous boundary audits, and building continuous proactive feedback loops within the Academic Senate.
+                            <strong>Strategic Recommendation:</strong> To bridge the gap between hierarchical, command-and-control oversight and true shared stewardship, the board must transition from traditional shared governance to a <strong>Shared Responsibility</strong> framework (Bahls, 2014). This requires expanding student voting seats, establishing rigorous boundary audits, and building continuous, proactive feedback loops with the Academic Senate.
                         </p>
                     </div>
                 </div>
-                <div class="mt-8 pt-4 border-t border-white/5 flex justify-between text-[9px] text-mutedgray uppercase tracking-widest">
+                <div class="mt-8 pt-4 border-t border-white/5 flex justify-between text-[9px] text-zinc-400 uppercase tracking-widest">
                     <span>Stewardship & Governance Index</span>
                     <span>Document Page 1</span>
                 </div>
@@ -177,7 +177,7 @@
                             <span class="text-[10px] uppercase tracking-[0.25em] font-extrabold text-minimalgold">Module 02</span>
                             <h2 class="text-3xl font-serif italic text-white mt-1">Conceptual Glossary</h2>
                         </div>
-                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] uppercase tracking-widest text-mutedgray">Vocabulary</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] uppercase tracking-widest text-zinc-400">Vocabulary</span>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
@@ -195,9 +195,9 @@
                                 </p>
                             </div>
                             <div>
-                                <h4 class="font-bold text-white uppercase tracking-wider text-xs">Cybernetic Feedback Loops</h4>
+                                <h4 class="font-bold text-white uppercase tracking-wider text-xs">Boundary Porosity Integrity (SGI Metric 2)</h4>
                                 <p class="text-mutedgray mt-1 leading-relaxed">
-                                    Think of this as the university’s internal thermostat or compass. As a healthy institution, having a way to measure either direction of decision outcomes help engage those involved to out the institution back to a stable and balanced state. (Birnbaum, 1989)
+                                    The diagnostic metric used to audit what theorists call "boundary network porosity." It measures how successfully a board implements conflict-of-interest checks (such as Form 700 disclosures) to ensure corporate-connected trustees act on behalf of the public good rather than private commercial interests.
                                 </p>
                             </div>
                         </div>
@@ -206,7 +206,7 @@
                             <div>
                                 <h4 class="font-bold text-white uppercase tracking-wider text-xs">The Institutional Umbrella</h4>
                                 <p class="text-mutedgray mt-1 leading-relaxed">
-                                    The conceptual framework where governing boards act as a exterior boundary to shield the institution's academic freedom and autonomy from political and legislative attacks (Rall et al., 2025).
+                                    The conceptual framework where governing boards act as an exterior boundary to shield the institution's academic freedom and autonomy from political, legislative, and external partisan attacks (Rall et al., 2025).
                                 </p>
                             </div>
                             <div>
@@ -224,7 +224,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mt-8 pt-4 border-t border-white/5 flex justify-between text-[9px] text-mutedgray uppercase tracking-widest">
+                <div class="mt-8 pt-4 border-t border-white/5 flex justify-between text-[9px] text-zinc-400 uppercase tracking-widest">
                     <span>Stewardship & Governance Index</span>
                     <span>Document Page 2</span>
                 </div>
@@ -238,7 +238,7 @@
                             <span class="text-[10px] uppercase tracking-[0.25em] font-extrabold text-minimalgold">Module 03</span>
                             <h2 class="text-3xl font-serif italic text-white mt-1">Stakeholder Intersectoral Mapping</h2>
                         </div>
-                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] uppercase tracking-widest text-mutedgray">Power Analysis</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] uppercase tracking-widest text-zinc-400">Power Analysis</span>
                     </div>
 
                     <p class="text-xs text-mutedgray leading-relaxed">
@@ -285,7 +285,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="mt-8 pt-4 border-t border-white/5 flex justify-between text-[9px] text-mutedgray uppercase tracking-widest">
+                <div class="mt-8 pt-4 border-t border-white/5 flex justify-between text-[9px] text-zinc-400 uppercase tracking-widest">
                     <span>Stewardship & Governance Index</span>
                     <span>Document Page 3</span>
                 </div>
@@ -297,9 +297,9 @@
                     <div class="flex justify-between items-start border-b border-white/10 pb-4">
                         <div>
                             <span class="text-[10px] uppercase tracking-[0.25em] font-extrabold text-minimalgold">Module 04</span>
-                            <h2 class="text-3xl font-serif italic text-white mt-1">Scorecard Methodology</h2>
+                            <h2 class="text-3xl font-serif italic text-white mt-1">Scorecard Mechanics & Strategic Foundations</h2>
                         </div>
-                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] uppercase tracking-widest text-mutedgray">Mechanics</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] uppercase tracking-widest text-zinc-400">Mechanics</span>
                     </div>
 
                     <div class="space-y-4 text-xs sm:text-sm text-mutedgray leading-relaxed">
@@ -307,12 +307,12 @@
                             To ensure academic and professional balance, the Stewardship & Governance Index (SGI) calculates performance using a qualitative scorecard. Assigning specific weights to key pillars derived from current higher education governance literature:
                         </p>
                         
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-2">
                             <div class="p-4 bg-white/5 border border-white/10 rounded">
                                 <h4 class="font-bold text-white mb-2 uppercase tracking-widest text-[10px]">Evaluation Pillars & Weighting</h4>
                                 <ul class="space-y-2 text-xs">
                                     <li class="flex justify-between"><span>1. Institutional Autonomy (Umbrella)</span> <span class="text-minimalgold font-bold">25%</span></li>
-                                    <li class="flex justify-between"><span>2. Boundary Network Integrity</span> <span class="text-minimalgold font-bold">20%</span></li>
+                                    <li class="flex justify-between"><span>2. Boundary Porosity Integrity</span> <span class="text-minimalgold font-bold">20%</span></li>
                                     <li class="flex justify-between"><span>3. Cybernetic Sensitivity</span> <span class="text-minimalgold font-bold">20%</span></li>
                                     <li class="flex justify-between"><span>4. Fiduciary DEIJ Fluency</span> <span class="text-minimalgold font-bold">20%</span></li>
                                     <li class="flex justify-between"><span>5. Relational Trust Capital</span> <span class="text-minimalgold font-bold">15%</span></li>
@@ -325,31 +325,33 @@
                                         SGI = 0.25(A) + 0.20(B) + 0.20(C) + 0.20(D) + 0.15(E)
                                     </p>
                                 </div>
-                                <p class="text-[10px] mt-2 text-mutedgray">
+                                <p class="text-[10px] mt-2 text-zinc-400">
                                     Final scores are mapped to letter grades: <br>
                                     <strong>&ge; 4.50:</strong> Grade A | <strong>3.50 - 4.49:</strong> Grade B | <strong>&lt; 3.50:</strong> Grade C
                                 </p>
                             </div>
                         </div>
 
-                        <h4 class="font-bold text-white uppercase tracking-wider text-xs">Measurement Rubric Scale (1.0 - 5.0)</h4>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-                            <div class="p-3 bg-carbon rounded">
-                                <span class="text-minimalgold font-serif italic font-bold">5.0 Star — Exceptional</span>
-                                <p class="text-mutedgray mt-1 text-[10px]">Significant and accessible written documents are presented to the public with consistent transparency and health of campus autonomy.</p>
-                            </div>
-                            <div class="p-3 bg-carbon rounded">
-                                <span class="text-minimalgold font-serif italic font-bold">3.0 Star — Meets Standard</span>
-                                <p class="text-mutedgray mt-1 text-[10px]">Formal structures are in place such as bylaws, and open sessions but the board remains passive, and mainly engaging with stakeholders post or during crises.</p>
-                            </div>
-                            <div class="p-3 bg-carbon rounded">
-                                <span class="text-minimalgold font-serif italic font-bold">1.0 Star — Deficient</span>
-                                <p class="text-mutedgray mt-1 text-[10px]">Significant disconnect, inconsistency with standard feedback systems, and conflicts of interest.</p>
+                        <!-- Added details explicitly addressing instructor feedback -->
+                        <div class="border-t border-white/10 pt-4 space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <h4 class="font-bold text-white uppercase tracking-widest text-xs">Who Applies the SGI?</h4>
+                                    <p class="text-xs text-zinc-400 mt-1 leading-relaxed">
+                                        To maintain absolute objectivity, the SGI is designed to be applied by an independent Joint Stewardship Blue Ribbon Commission. This external body is composed of Academic Senate faculty representatives, student government delegates, public-interest trustees, and third-party higher education governance auditors. This prevents any internal conflict of interest while maintaining academic and financial fluency.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white uppercase tracking-widest text-xs">Why the MBA Strategy Lens?</h4>
+                                    <p class="text-xs text-zinc-400 mt-1 leading-relaxed">
+                                        Modern trustees are increasingly drawn from elite corporate backgrounds and struggle to comprehend the decentralized nature of academic shared governance. The MBA Strategy Lens translates academic theories (like cybernetic feedback loops and institutional umbrellas) into the language of corporate risk management and operational KPIs. This bridges the gap, helping corporate-minded trustees align their business acumen with the public trust.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="mt-8 pt-4 border-t border-white/5 flex justify-between text-[9px] text-mutedgray uppercase tracking-widest">
+                <div class="mt-8 pt-4 border-t border-white/5 flex justify-between text-[9px] text-zinc-400 uppercase tracking-widest">
                     <span>Stewardship & Governance Index</span>
                     <span>Document Page 4</span>
                 </div>
@@ -363,10 +365,17 @@
                             <span class="text-[10px] uppercase tracking-[0.25em] font-extrabold text-minimalgold">Module 05</span>
                             <h2 class="text-3xl font-serif italic text-white mt-1">Application: UC Board of Regents</h2>
                         </div>
-                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] uppercase tracking-widest text-mutedgray">Case Study</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] uppercase tracking-widest text-zinc-400">Case Study</span>
                     </div>
 
                     <div class="space-y-4 text-xs sm:text-sm text-mutedgray leading-relaxed max-h-[300px] overflow-y-auto pr-2 custom-scroll">
+                        <p class="text-white font-semibold">
+                            Why Choose the UC Board of Regents?
+                        </p>
+                        <p class="text-zinc-400 text-xs">
+                            The University of California Board of Regents serves as the premier case study for public governance. Managing over <strong>290,000 students</strong> and a <strong>$40 Billion+</strong> enterprise (UC Annual Financial Report, 2025), its unique constitutional status as a "public trust" (CA Constitution, Art. IX, § 9) places it at the critical intersection of state legislative authority, academic autonomy, and corporate network connectivity. This makes it a critical setting to apply the SGI.
+                        </p>
+                        <hr class="border-white/10">
                         <p>
                             Applying the Stewardship & Governance Index to the UC Board of Regents (Current Assessment):
                         </p>
@@ -375,37 +384,37 @@
                             <div>
                                 <h4 class="font-bold text-white text-xs uppercase tracking-wider">Pillar 1: Institutional Autonomy (SGI Rating: 3.5 / 5.0)</h4>
                                 <p class="text-mutedgray mt-1">
-                                    Evidence: Due to the California Constitution, Sections 9 under Article IX, the UC Regents are held to maintain their status as a "public trust." Evidently, the board is highly sensitive to the state's political administration, even though they are legally shielded from political management. Since 18 of the 26 voting members are directly appointed by the Governor, the board has close proximity to political influence and can be pressured by budget negotiations and campus safety friction. If this isn't enough, most of the appointed members of the board have history of working with the Governor's administration at one point in time. 
+                                    Evidence: Due to the California Constitution, Sections 9 under Article IX, the UC Regents are held to maintain their status as a "public trust." Evidently, the board is highly sensitive to the state's political administration, even though they are legally shielded from political management. Since 18 of the 26 voting members are directly appointed by the Governor, the board has close proximity to political influence and can be pressured by budget negotiations and campus safety friction. Most of the appointed members of the board have a history of working with the Governor's administration at some point in their careers.
                                 </p>
                             </div>
                             <div>
-                                <h4 class="font-bold text-white text-xs uppercase tracking-wider">Pillar 2: Boundary Network Integrity (SGI Rating: 4.2 / 5.0)</h4>
+                                <h4 class="font-bold text-white text-xs uppercase tracking-wider">Pillar 2: Boundary Porosity Integrity (SGI Rating: 4.2 / 5.0)</h4>
                                 <p class="text-mutedgray mt-1">
-                                    Evidence: In review of the board's public Form 700 disclosures, it reflects that multiple board members hold high and powerful positions within major multinational corporations (e.g., Uber, Disney). On the same token, these corporate ties bring valuable expertise to the UC's $40B+ enterprise, they still present risks of structural alignment conflicts. In the case of the UC Regents board they maintain high compliance with public disclosure, but lack structured audits.
+                                    Evidence: In review of the board's public Form 700 disclosures, it reflects that multiple board members hold high and powerful positions within major multinational corporations (e.g., Uber, Disney). While these corporate ties bring valuable expertise to the UC's $40B+ enterprise, they still present risks of structural alignment conflicts. In the case of the UC Regents board, they maintain high compliance with public disclosure but lack structured independent boundary audits.
                                 </p>
                             </div>
                             <div>
                                 <h4 class="font-bold text-white text-xs uppercase tracking-wider">Pillar 3: Cybernetic Sensitivity (SGI Rating: 3.0 / 5.0)</h4>
                                 <p class="text-mutedgray mt-1">
-                                    Evidence: The board interacts with the Academic Senate via Bylaw 40 (which delegates course design and curriculum authority to faculty). But, the board's communication is often reactive rather than proactive. Reactivity the Academic Senate and student councils are consulted after decisions are made bypassing Birnbaum's (1989) cybernetic feedback loops until a crisis arises.
+                                    Evidence: The board interacts with the Academic Senate via Bylaw 40 (which delegates course design and curriculum authority to faculty). But, the board's communication is often reactive rather than proactive. Reactively, the Academic Senate and student councils are consulted after decisions are made, bypassing Birnbaum's (1989) cybernetic feedback loops until a crisis arises.
                                 </p>
                             </div>
                             <div>
                                 <h4 class="font-bold text-white text-xs uppercase tracking-wider">Pillar 4: Fiduciary DEIJ Fluency (SGI Rating: 2.5 / 5.0)</h4>
                                 <p class="text-mutedgray mt-1">
-                                    Evidence: DEI is heavily integrated into formal symbolic plans, but is rarely embedded into standard fiduciary resource allocation or line-item audits. Examples of this show that Board members express that the student body is across the spectrum represented yet the board doesn't exhibit this. The available board minutes reveals that the Regents often exhibit the "Electrical Socket" dynamic (Morgan et al., 2022) as well.
+                                    Evidence: DEI is heavily integrated into formal symbolic plans, but is rarely embedded into standard fiduciary resource allocation or line-item audits. Board members express that the student body is represented across the spectrum, yet the board's own demographic and professional background doesn't reflect this. The available board minutes reveal that the Regents often exhibit the "Electrical Socket" dynamic (Morgan et al., 2022), engaging with student equity challenges episodic and reactive during crises.
                                 </p>
                             </div>
                             <div>
                                 <h4 class="font-bold text-white text-xs uppercase tracking-wider">Pillar 5: Relational Trust Capital (SGI Rating: 2.8 / 5.0)</h4>
                                 <p class="text-mutedgray mt-1">
-                                    Evidence: There is a distinct "Representational Gap" on the board. With only one voting student regent representing over 290,000 students, the board's relational trust capital feels low. Activism and public comment are the primary channels for student feedback often to far into the problem leading to reactivity. Which signals a breakdown in relational, trust-based leadership (Kezar, 2004).
+                                    Evidence: There is a distinct "Representational Gap" on the board. With only one voting student regent representing over 290,000 students, the board's relational trust capital feels low. Activism and public comment are the primary channels for student feedback, often occurring too far into a problem and leading to reactivity. This signals a breakdown in relational, trust-based leadership (Kezar, 2004).
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="mt-8 pt-4 border-t border-white/5 flex justify-between text-[9px] text-mutedgray uppercase tracking-widest">
+                <div class="mt-8 pt-4 border-t border-white/5 flex justify-between text-[9px] text-zinc-400 uppercase tracking-widest">
                     <span>Stewardship & Governance Index</span>
                     <span>Document Page 5</span>
                 </div>
@@ -421,7 +430,7 @@
                         </div>
                         <div class="bg-carbon border border-white/10 px-4 py-2 rounded text-center">
                             <span class="text-[8px] uppercase tracking-widest text-minimalgold block">Weighted SGI Score</span>
-                            <span id="score-val" class="text-lg font-black font-serif">3.21</span> <span class="text-[9px] text-mutedgray">/ 5.0</span>
+                            <span id="score-val" class="text-lg font-black font-serif">3.21</span> <span class="text-[9px] text-zinc-400">/ 5.0</span>
                         </div>
                     </div>
 
@@ -438,14 +447,14 @@
                                     <span id="v1" class="text-minimalgold font-bold">3.5</span>
                                 </div>
                                 <input type="range" id="s1" min="1.0" max="5.0" step="0.1" value="3.5" oninput="runCalibrator()" class="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-minimalgold">
-                                <div class="grid grid-cols-2 gap-2 text-[10px] pt-1 text-mutedgray border-t border-white/5">
+                                <div class="grid grid-cols-2 gap-2 text-[10px] pt-1 text-zinc-400 border-t border-white/5">
                                     <div>
                                         <span class="text-white font-semibold">What is Checked:</span>
-                                        <p class="leading-normal">Protective policies, defense of academic freedom, and structural resistance to political agendas.</p>
+                                        <p class="leading-normal">Shielding policies, defense of academic freedom, and structural resistance to gubernatorial or partisan political agendas.</p>
                                     </div>
                                     <div>
                                         <span class="text-white font-semibold">Why Weighted 25%:</span>
-                                        <p class="leading-normal">This section is the highest weighted area due to the density of maintaining the integrity of the boards order and body.</p>
+                                        <p class="leading-normal">Autonomy is the baseline. As the 'Institutional Umbrella' (Rall et al., 2025), if a board cannot shield scholars from state interference, other governance pillars fail.</p>
                                     </div>
                                 </div>
                             </div>
@@ -457,14 +466,14 @@
                                     <span id="v2" class="text-minimalgold font-bold">4.2</span>
                                 </div>
                                 <input type="range" id="s2" min="1.0" max="5.0" step="0.1" value="4.2" oninput="runCalibrator()" class="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-minimalgold">
-                                <div class="grid grid-cols-2 gap-2 text-[10px] pt-1 text-mutedgray border-t border-white/5">
+                                <div class="grid grid-cols-2 gap-2 text-[10px] pt-1 text-zinc-400 border-t border-white/5">
                                     <div>
                                         <span class="text-white font-semibold">What is Checked:</span>
-                                        <p class="leading-normal">Form 700 declarations, external corporate network overlaps, and systemic checks against private or market-driven interests.</p>
+                                        <p class="leading-normal">Form 700 declarations, external corporate network overlaps, and systemic checks against private/market-driven interests.</p>
                                     </div>
                                     <div>
                                         <span class="text-white font-semibold">Why Weighted 20%:</span>
-                                        <p class="leading-normal">The second highest weighted area as unmitigated corporate conflicts threaten the fiduciary commitment to higher education as a public trust.</p>
+                                        <p class="leading-normal">Elite boards are highly porous (Barringer et al., 2022). Unmitigated corporate conflicts threaten the fiduciary commitment to higher education as a public trust.</p>
                                     </div>
                                 </div>
                             </div>
@@ -476,10 +485,10 @@
                                     <span id="v3" class="text-minimalgold font-bold">3.0</span>
                                 </div>
                                 <input type="range" id="s3" min="1.0" max="5.0" step="0.1" value="3.0" oninput="runCalibrator()" class="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-minimalgold">
-                                <div class="grid grid-cols-2 gap-2 text-[10px] pt-1 text-mutedgray border-t border-white/5">
+                                <div class="grid grid-cols-2 gap-2 text-[10px] pt-1 text-zinc-400 border-t border-white/5">
                                     <div>
                                         <span class="text-white font-semibold">What is Checked:</span>
-                                        <p class="leading-normal">Timing in responding to Faculty Senate actions, maintained with Bylaw 40, and the presence of non-crisis administrative feedback channels.</p>
+                                        <p class="leading-normal">Latency in responding to Faculty Senate actions, adherence to Bylaw 40, and the presence of non-crisis administrative feedback channels.</p>
                                     </div>
                                     <div>
                                         <span class="text-white font-semibold">Why Weighted 20%:</span>
@@ -495,14 +504,14 @@
                                     <span id="v4" class="text-minimalgold font-bold">2.5</span>
                                 </div>
                                 <input type="range" id="s4" min="1.0" max="5.0" step="0.1" value="2.5" oninput="runCalibrator()" class="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-minimalgold">
-                                <div class="grid grid-cols-2 gap-2 text-[10px] pt-1 text-mutedgray border-t border-white/5">
+                                <div class="grid grid-cols-2 gap-2 text-[10px] pt-1 text-zinc-400 border-t border-white/5">
                                     <div>
                                         <span class="text-white font-semibold">What is Checked:</span>
                                         <p class="leading-normal">Alignment of diversity goals with line-item resource allocation, capital budgets, and regular performance evaluations.</p>
                                     </div>
                                     <div>
                                         <span class="text-white font-semibold">Why Weighted 20%:</span>
-                                        <p class="leading-normal">This area is weighted at this level due to ensuring equity remains a steady, active commitment instead of a reactive public PR tool.</p>
+                                        <p class="leading-normal">This counteracts the 'Electrical Socket' dynamic (Morgan et al., 2022) by ensuring equity remains a steady, active commitment instead of a reactive public PR tool.</p>
                                     </div>
                                 </div>
                             </div>
@@ -514,14 +523,14 @@
                                     <span id="v5" class="text-minimalgold font-bold">2.8</span>
                                 </div>
                                 <input type="range" id="s5" min="1.0" max="5.0" step="0.1" value="2.8" oninput="runCalibrator()" class="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-minimalgold">
-                                <div class="grid grid-cols-2 gap-2 text-[10px] pt-1 text-mutedgray border-t border-white/5">
+                                <div class="grid grid-cols-2 gap-2 text-[10px] pt-1 text-zinc-400 border-t border-white/5">
                                     <div>
                                         <span class="text-white font-semibold">What is Checked:</span>
-                                        <p class="leading-normal">The Representation Gap, the structure of student and staff advisory roles, and proactive non-crisis engagements with the campus.</p>
+                                        <p class="leading-normal">The Representation Gap, the structure of student/staff advisory roles, and proactive non-crisis engagements with the campus.</p>
                                     </div>
                                     <div>
                                         <span class="text-white font-semibold">Why Weighted 15%:</span>
-                                        <p class="leading-normal">Although this area is weighted at its level, its still very much important to monitor the representation of each students body populaus to represent accurately. </p>
+                                        <p class="leading-normal">Trust is the 'social glue' of governance (Kezar, 2004). Strong relationships ensure that hard decisions can be made without causing structural division.</p>
                                     </div>
                                 </div>
                             </div>
@@ -535,21 +544,21 @@
                                 <div class="space-y-3">
                                     <div>
                                         <span class="text-[10px] uppercase tracking-wider text-minimalgold font-bold block mb-1">Stewardship Grade Performance</span>
-                                        <p id="calibrator-feedback" class="text-mutedgray leading-relaxed text-[11px]">
+                                        <p id="calibrator-feedback" class="text-zinc-300 leading-relaxed text-[11px]">
                                             Calibrate the sliders on the left to determine the operational health score of the UC Regents.
                                         </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="pt-3 border-t border-white/5 flex items-center justify-between text-[9px] mt-auto">
-                                <span class="text-mutedgray uppercase font-bold tracking-widest">Calculated Status:</span>
+                                <span class="text-zinc-400 uppercase font-bold tracking-widest">Calculated Status:</span>
                                 <span id="status-tag" class="text-minimalgold font-bold uppercase tracking-widest">Grade B</span>
                             </div>
                         </div>
 
                     </div>
                 </div>
-                <div class="mt-4 pt-4 border-t border-white/5 flex justify-between text-[9px] text-mutedgray uppercase tracking-widest">
+                <div class="mt-4 pt-4 border-t border-white/5 flex justify-between text-[9px] text-zinc-400 uppercase tracking-widest">
                     <span>Stewardship & Governance Index</span>
                     <span>Document Page 6</span>
                 </div>
@@ -563,7 +572,7 @@
                             <span class="text-[10px] uppercase tracking-[0.25em] font-extrabold text-minimalgold">Module 07</span>
                             <h2 class="text-3xl font-serif italic text-white mt-1">Literature Citations & Bibliography</h2>
                         </div>
-                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] uppercase tracking-widest text-mutedgray">Academic</span>
+                        <span class="px-3 py-1 bg-white/5 border border-white/10 rounded text-[9px] uppercase tracking-widest text-zinc-400">Academic</span>
                     </div>
 
                     <!-- Peer-reviewed References List -->
@@ -610,7 +619,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="mt-8 pt-4 border-t border-white/5 flex justify-between text-[9px] text-mutedgray uppercase tracking-widest">
+                <div class="mt-8 pt-4 border-t border-white/5 flex justify-between text-[9px] text-zinc-400 uppercase tracking-widest">
                     <span>Stewardship & Governance Index</span>
                     <span>Document Page 7</span>
                 </div>
@@ -622,7 +631,7 @@
 
     <!-- Playbook Footer -->
     <footer class="bg-obsidian border-t border-white/10 py-6 px-6 text-center md:text-left mt-auto">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-[9px] text-mutedgray uppercase tracking-widest">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-[9px] text-zinc-400 uppercase tracking-widest">
             <p>&copy; 2026 UC Board of Regents Stewardship & Governance Playbook.</p>
             <div class="flex space-x-4">
                 <span class="text-minimalgold font-bold">Sarah Ogden, MBA (c)</span>
